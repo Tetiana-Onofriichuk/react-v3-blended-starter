@@ -1,19 +1,28 @@
-import GridItem from "../GridItem/GridItem";
-
 import styles from "./PhotosGalleryItem.module.css";
 
-export default function PhotosGalleryItem() {
+interface PhotosGalleryItemProps {
+  src: string;
+  alt: string;
+  avgColor: string;
+  onClick: () => void;
+}
+
+export default function PhotosGalleryItem({
+  src,
+  alt,
+  avgColor,
+  onClick,
+}: PhotosGalleryItemProps) {
   return (
-    <GridItem>
-      <div
-        className={styles.thumb}
-        style={{
-          backgroundColor: "avg_color",
-          borderColor: "avg_color",
-        }}
-      >
-        <img src="" alt="" />
-      </div>
-    </GridItem>
+    <div
+      className={styles.thumb}
+      style={{
+        backgroundColor: avgColor,
+        borderColor: avgColor,
+      }}
+      onClick={onClick}
+    >
+      <img src={src} alt={alt} />
+    </div>
   );
 }
