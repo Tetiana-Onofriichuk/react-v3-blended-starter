@@ -1,5 +1,5 @@
 export interface Photo {
-  id: string;
+  id: number;
   avg_color: string;
   alt: string;
   src: {

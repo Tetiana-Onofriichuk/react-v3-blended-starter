@@ -1,6 +1,6 @@
 import Grid from "../Grid/Grid";
 import GridItem from "../GridItem/GridItem";
-import { Photo } from "../../types/photo";
+import type { Photo } from "../../types/photo";
 import PhotosGalleryItem from "../PhotosGalleryItem/PhotosGalleryItem";
 
 interface PhotosGalleryProps {
@@ -12,7 +12,7 @@ export default function PhotosGallery({
   photos,
   onOpenModal,
 }: PhotosGalleryProps) {
-  if (photos.length === 0) {
+  if (!photos || photos.length === 0) {
     return null;
   }
 
